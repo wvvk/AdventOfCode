@@ -6,6 +6,8 @@
 #include <set>
 #include <queue>
 
+/* Winnie Kam */
+
 using namespace std;
 
 struct ElfInfo
