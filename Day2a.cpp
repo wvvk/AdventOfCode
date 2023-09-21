@@ -59,14 +59,14 @@ vector<Game> read_game_file(const string &filename)
 
 unsigned int calculate_score(Game game)
 {
-    if (auto search = rules.find(make_pair(game.a, game.b)); search != rules.end())
+    if (auto search = rules.find(make_pair(game.a, game.b)); search != rules.end())  //Note: map find returns iterator.
     {
         /*std::cout << "Found:" << search->first.first
                   << " ,  " << search->first.second
                   << "Found:" << search->second << '\n';*/
         char result = search->second;
         char myplay = game.b;
-        int play_score = score[myplay]; //only use [] if key is sure to exist
+        int play_score = score[myplay]; //Note:: only use [] for small map and if key is sure to exist
         int result_score = score[result];
         return play_score + result_score;
     }
@@ -86,7 +86,7 @@ int main(int argc, char *argv[])
     4 go thru the list and compute the score
     */
     //cout << argc << endl;
-    if (argc != 2)
+    if (argc != 2)  //Note: remember to check
     {
         cout << "Error: Usage: " << argv[0] << " <input_filename>" << endl;
         return 1;
