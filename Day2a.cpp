@@ -6,7 +6,9 @@
 
 using namespace std;
 
-//Winnie Kam
+/*Winnie Kam
+https://adventofcode.com/2022/day/2
+*/
 
 struct Game
 {
