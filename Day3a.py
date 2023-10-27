@@ -1,21 +1,17 @@
 import string
 
 #Winnie Kam
+#https://adventofcode.com/2022/day/3
 
-lower_upper_alphabets = string.ascii_lowercase + string.ascii_uppercase
-# print (lower_upper_alphabets)
+def calculate_common(file_string):
+    lower_upper_alphabets = string.ascii_lowercase + string.ascii_uppercase
+    char_val_map = {}
+    val_index = 1
+    for c in lower_upper_alphabets:
+        char_val_map[c] = val_index
+        val_index += 1
 
-char_val_map = {}
-val_index = 1
-for c in lower_upper_alphabets:
-    char_val_map[c] = val_index
-    val_index += 1
-# print (char_val_map)
-
-sum_of_common = 0
-with open("backpacks.txt", "r") as f:
-    file_contents = f.read()
-    # print(line)
+    sum_of_common = 0
     lines = file_contents.split('\n')
     for line in lines:
         line_len = len(line)
@@ -31,5 +27,8 @@ with open("backpacks.txt", "r") as f:
         common_char = common_char.pop()
         #       print(common_char)
         sum_of_common += char_val_map[common_char]
+    return sum_of_common
 
-print("sum_of_common: " + str(sum_of_common))
+with open("backpacks.txt", "r") as f:
+    file_contents = f.read()
+    print("sum_of_common: " + str(calculate_common(file_contents)))
