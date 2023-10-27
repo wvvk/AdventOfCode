@@ -1,7 +1,9 @@
 import string
 
-#Winnie Kam
-#https://adventofcode.com/2022/day/3
+'''
+Winnie Kam
+https://adventofcode.com/2022/day/3
+'''
 
 def calculate_common(file_string):
     lower_upper_alphabets = string.ascii_lowercase + string.ascii_uppercase
